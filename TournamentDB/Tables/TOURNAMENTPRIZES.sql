@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[TOURNAMENT_PRIZES]
+(
+	[TourPrize_Id] INT NOT NULL PRIMARY KEY, 
+    [Prize_Id] INT NOT NULL IDENTITY, 
+    [Tournament_Id] INT NOT NULL,
+	CONSTRAINT [FK_TPrizes_Tour_ID] FOREIGN KEY ([Tournament_Id]) REFERENCES [TOURNAMENTS]([Tournament_Id]),
+	CONSTRAINT [FK_TEntry_Prize_ID] FOREIGN KEY ([Prize_Id]) REFERENCES [PRIZES]([Prize_Id]),
+)
